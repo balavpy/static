@@ -5,7 +5,7 @@ pipeline{
     stages{
         stage('dockerbuild'){
             steps{
-                sh 'node --version'
+                sh 'uname -a'
             }
         }
         stage('test'){
