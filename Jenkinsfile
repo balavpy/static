@@ -1,6 +1,6 @@
 pipeline{
     agent {
-        docker { image: 'nginx:latest' }
+        docker { image 'nginx:latest' }
     }
     stages{
         stage('build'){
