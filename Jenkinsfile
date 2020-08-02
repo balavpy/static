@@ -1,11 +1,11 @@
 pipeline{
-    agent any
+    agent {
+        docker { image: nginx:latest }
+    }
     stages{
         stage('build'){
             steps{
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                sh 'make'
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+                sh "uname -a"
             }
         }
         stage('test'){
