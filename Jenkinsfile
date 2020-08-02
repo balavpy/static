@@ -1,11 +1,11 @@
 pipeline{
     agent {
-        docker { image: nginx:latest }
+        docker { image: 'nginx:latest' }
     }
     stages{
         stage('build'){
             steps{
-                sh "uname -a"
+                sh 'uname -a'
             }
         }
         stage('test'){
