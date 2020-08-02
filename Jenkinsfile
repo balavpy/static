@@ -3,7 +3,7 @@ pipeline{
         docker { image 'nginx:latest' }
     }
     stages{
-        stage('build'){
+        stage('dockerbuild'){
             steps{
                 sh 'uname -a'
             }
