@@ -2,8 +2,9 @@ pipeline{
     agent { dockerfile true }
     stages{
         stage('docker stage'){
-            steps{
+            steps {
                 sh 'echo $FNAME'
+                echo $FNAME
             }
         }
     }
