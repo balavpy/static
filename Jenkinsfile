@@ -1,21 +1,14 @@
-pipeline{
+pipeline {
     agent {
-        docker { image 'alpine:latest' }
+        docker {
+            image 'maven:3-alpine'
+            args '-v $HOME/.m2:/root/.m2'
+        }
     }
-    stages{
-        stage('dockerbuild'){
-            steps{
-                sh 'uname -a'
-            }
-        }
-        stage('test'){
-            steps{
-                echo "test stage"
-            }
-        }
-        stage('deploy'){
-            steps{
-                echo "deploy stage"
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn -B'
             }
         }
     }
